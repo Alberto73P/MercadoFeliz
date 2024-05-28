@@ -1,0 +1,65 @@
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-image: url(../img/fondoBorroso.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+main {
+    display: flex;
+    justify-content: left;
+    margin-left: 10%;
+    align-items: center;
+    height: 100vh;
+
+}
+
+.login {
+    width: 300px;
+    padding: 50px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    background-color: #f9f9f9e6;
+    justify-content: left;
+}
+
+.login h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+button {
+    width: 50%;
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+    background-color: #981616;
+    color: white;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #7c1010;
+}
