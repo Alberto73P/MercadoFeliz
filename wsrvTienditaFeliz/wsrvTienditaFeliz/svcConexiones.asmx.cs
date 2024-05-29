@@ -140,7 +140,27 @@ namespace wsrvTienditaFeliz
             clsConexiones objeto = new clsConexiones();
             return objeto.sp_Acceso(usuario,password);
         }
+        
+        [WebMethod]
+        public DataSet sp_ConsultaProductoVenta(string nomProducto)
+        {
+            clsConexiones objeto = new clsConexiones();
+            return objeto.sp_ConsultaProductoVenta(nomProducto);
+        }
 
+        [WebMethod]
+        public DataSet sp_InsVenta(string nomempleado)
+        {
+            clsConexiones objeto = new clsConexiones();
+            return objeto.sp_InsVenta(nomempleado);
+        }
+        
+        [WebMethod]
+        public DataSet sp_InsDetalleVenta(string nombre, decimal cantidad)
+        {
+            clsConexiones objeto = new clsConexiones();
+            return objeto.sp_InsDetalleVenta(nombre, cantidad);
+        }
 
     }
 

@@ -288,6 +288,70 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="sp_ConsultaProductoVenta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nomProducto" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sp_ConsultaProductoVentaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sp_ConsultaProductoVentaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sp_InsVenta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nomempleado" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sp_InsVentaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sp_InsVentaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sp_InsDetalleVenta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="cantidad" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sp_InsDetalleVentaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sp_InsDetalleVentaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="sp_InsClienteSoapIn">
@@ -368,6 +432,24 @@
   <wsdl:message name="sp_AccesoSoapOut">
     <wsdl:part name="parameters" element="tns:sp_AccesoResponse" />
   </wsdl:message>
+  <wsdl:message name="sp_ConsultaProductoVentaSoapIn">
+    <wsdl:part name="parameters" element="tns:sp_ConsultaProductoVenta" />
+  </wsdl:message>
+  <wsdl:message name="sp_ConsultaProductoVentaSoapOut">
+    <wsdl:part name="parameters" element="tns:sp_ConsultaProductoVentaResponse" />
+  </wsdl:message>
+  <wsdl:message name="sp_InsVentaSoapIn">
+    <wsdl:part name="parameters" element="tns:sp_InsVenta" />
+  </wsdl:message>
+  <wsdl:message name="sp_InsVentaSoapOut">
+    <wsdl:part name="parameters" element="tns:sp_InsVentaResponse" />
+  </wsdl:message>
+  <wsdl:message name="sp_InsDetalleVentaSoapIn">
+    <wsdl:part name="parameters" element="tns:sp_InsDetalleVenta" />
+  </wsdl:message>
+  <wsdl:message name="sp_InsDetalleVentaSoapOut">
+    <wsdl:part name="parameters" element="tns:sp_InsDetalleVentaResponse" />
+  </wsdl:message>
   <wsdl:portType name="svcConexionesSoap">
     <wsdl:operation name="sp_InsCliente">
       <wsdl:input message="tns:sp_InsClienteSoapIn" />
@@ -420,6 +502,18 @@
     <wsdl:operation name="sp_Acceso">
       <wsdl:input message="tns:sp_AccesoSoapIn" />
       <wsdl:output message="tns:sp_AccesoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sp_ConsultaProductoVenta">
+      <wsdl:input message="tns:sp_ConsultaProductoVentaSoapIn" />
+      <wsdl:output message="tns:sp_ConsultaProductoVentaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sp_InsVenta">
+      <wsdl:input message="tns:sp_InsVentaSoapIn" />
+      <wsdl:output message="tns:sp_InsVentaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sp_InsDetalleVenta">
+      <wsdl:input message="tns:sp_InsDetalleVentaSoapIn" />
+      <wsdl:output message="tns:sp_InsDetalleVentaSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="svcConexionesSoap" type="tns:svcConexionesSoap">
@@ -541,6 +635,33 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="sp_ConsultaProductoVenta">
+      <soap:operation soapAction="http://tempuri.org/sp_ConsultaProductoVenta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sp_InsVenta">
+      <soap:operation soapAction="http://tempuri.org/sp_InsVenta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sp_InsDetalleVenta">
+      <soap:operation soapAction="http://tempuri.org/sp_InsDetalleVenta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="svcConexionesSoap12" type="tns:svcConexionesSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -654,6 +775,33 @@
     </wsdl:operation>
     <wsdl:operation name="sp_Acceso">
       <soap12:operation soapAction="http://tempuri.org/sp_Acceso" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sp_ConsultaProductoVenta">
+      <soap12:operation soapAction="http://tempuri.org/sp_ConsultaProductoVenta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sp_InsVenta">
+      <soap12:operation soapAction="http://tempuri.org/sp_InsVenta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sp_InsDetalleVenta">
+      <soap12:operation soapAction="http://tempuri.org/sp_InsDetalleVenta" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

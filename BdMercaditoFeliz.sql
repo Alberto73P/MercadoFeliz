@@ -180,9 +180,7 @@ begin
 end $$
 delimiter ;
 -- --------------------------------------------------------
-select *from empleado;
-drop procedure sp_ControlAcceso;
-call sp_ControlAcceso('LuisHT','luheto');
+
 --
 -- Estructura de tabla para la tabla `cliente`
 --

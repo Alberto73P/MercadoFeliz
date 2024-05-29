@@ -228,20 +228,55 @@ namespace wsrvTienditaFeliz
 
 
         public DataSet sp_Acceso(string usuario,string password)
-        {
-            // Clases de conexión y ejecución de comandos
+        {            
             string cadSql = "CALL sp_ControlAcceso('" + usuario + "', '" + password  + "')";
-
-
             MySqlConnection cnn = new MySqlConnection(cadConn);
             MySqlDataAdapter da = new MySqlDataAdapter(cadSql, cnn);
-            // Ejecución del adaptador y recibir datos
             DataSet ds = new DataSet();
             da.Fill(ds, "sp_ControlAcceso");
             // Retorno de resultados
             return ds;
         }
 
+        public DataSet sp_ConsultaProductoVenta(String nomProducto)
+        {
+            string sqlquery = $"Call sp_ConsultaProductoVenta('{nomProducto}')";
+            MySqlConnection cnn = new MySqlConnection(cadConn);
+            MySqlDataAdapter da = new MySqlDataAdapter(sqlquery,cnn);
+            DataSet ds = new DataSet();
+            da.Fill(ds,"sp_ConsultaProductoVenta");
+            return ds;
+        }
+        public DataSet sp_InsVenta(String nomEmpleado)
+        {
+            string sqlquery = $"Call sp_InsVenta('{nomEmpleado}')";
+            MySqlConnection cnn = new MySqlConnection(cadConn);
+            MySqlDataAdapter da = new MySqlDataAdapter(sqlquery, cnn);
+            DataSet ds = new DataSet();
+            da.Fill(ds, "sp_InsVenta");
+            return ds;
+        }
+        public DataSet sp_InsDetalleVenta(String _nombre, decimal cantidad)
+        {
+            string sqlquery = $"Call sp_InsDetalleVenta('{_nombre}',{cantidad})";
+            MySqlConnection cnn = new MySqlConnection(cadConn);
+            MySqlDataAdapter da = new MySqlDataAdapter(sqlquery, cnn);
+            DataSet ds = new DataSet();
+            da.Fill(ds, "sp_InsDetalleVenta");
+            return ds;
+        }
+        public DataSet vw_Ticket()
+        {
+            // Clases de conexión y ejecución de comandos
+            string cadSql = "select * from ticket;";
+            MySqlConnection cnn = new MySqlConnection(cadConn);
+            MySqlDataAdapter da = new MySqlDataAdapter(cadSql, cnn);
+            // Ejecución del adaptador y recibir datos
+            DataSet ds = new DataSet();
+            da.Fill(ds, "vw_detalle_venta");
+            // Retorno de resultados
+            return ds;
+        }
 
 
 

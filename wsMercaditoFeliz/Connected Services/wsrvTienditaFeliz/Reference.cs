@@ -106,6 +106,27 @@ namespace wsMercaditoFeliz.wsrvTienditaFeliz {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/sp_Acceso", ReplyAction="*")]
         System.Threading.Tasks.Task<System.Data.DataSet> sp_AccesoAsync(string usuario, string password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/sp_ConsultaProductoVenta", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet sp_ConsultaProductoVenta(string nomProducto);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/sp_ConsultaProductoVenta", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Data.DataSet> sp_ConsultaProductoVentaAsync(string nomProducto);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/sp_InsVenta", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet sp_InsVenta(string nomempleado);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/sp_InsVenta", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Data.DataSet> sp_InsVentaAsync(string nomempleado);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/sp_InsDetalleVenta", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet sp_InsDetalleVenta(string nombre, decimal cantidad);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/sp_InsDetalleVenta", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Data.DataSet> sp_InsDetalleVentaAsync(string nombre, decimal cantidad);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -237,6 +258,30 @@ namespace wsMercaditoFeliz.wsrvTienditaFeliz {
         
         public System.Threading.Tasks.Task<System.Data.DataSet> sp_AccesoAsync(string usuario, string password) {
             return base.Channel.sp_AccesoAsync(usuario, password);
+        }
+        
+        public System.Data.DataSet sp_ConsultaProductoVenta(string nomProducto) {
+            return base.Channel.sp_ConsultaProductoVenta(nomProducto);
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataSet> sp_ConsultaProductoVentaAsync(string nomProducto) {
+            return base.Channel.sp_ConsultaProductoVentaAsync(nomProducto);
+        }
+        
+        public System.Data.DataSet sp_InsVenta(string nomempleado) {
+            return base.Channel.sp_InsVenta(nomempleado);
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataSet> sp_InsVentaAsync(string nomempleado) {
+            return base.Channel.sp_InsVentaAsync(nomempleado);
+        }
+        
+        public System.Data.DataSet sp_InsDetalleVenta(string nombre, decimal cantidad) {
+            return base.Channel.sp_InsDetalleVenta(nombre, cantidad);
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataSet> sp_InsDetalleVentaAsync(string nombre, decimal cantidad) {
+            return base.Channel.sp_InsDetalleVentaAsync(nombre, cantidad);
         }
     }
 }
