@@ -14,17 +14,20 @@
         <section class="login">
             <h2>Inicio de Sesión</h2>
             <br>
-            <form action="procesar_login.php" method="post">
+            <form id="form1" runat="server">
                 <div class="form-group">
-                    <label for="email">Usuario:</label>
-                    <input type="email" id="email" name="email" required>
+                    <label for="email">Usuario:<asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                    </label>
+                    &nbsp;
                 </div>
                 <div class="form-group">
-                    <label for="password">Contraseña:</label>
-                    <input type="password" id="password" name="password" required>
+                    <label for="password">Contraseña:<asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+                    </label>&nbsp;
                 </div>
                 <br>
-                <center><button type="submit">Iniciar Sesión</button></center>
+                <center>
+                    <asp:Button ID="Button1" runat="server" BackColor="#990000" ForeColor="White" OnClick="Button1_Click" Text="iniciar sesión" />
+                </center>
             </form>
         </section>
     </main>

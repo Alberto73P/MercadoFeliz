@@ -16,11 +16,15 @@
         </div>
         <nav>
             <ul>
-                <li><a href="#">Productos</a></li>
-                <li><a href="#">Ventas</a></li>
-                <li><a href="#">Proveedores</a></li>
-                <li><a href="#">Cerrar sesión</a></li>
+                <li><a href="fwProductos.aspx">Productos</a></li>
+                <li><a href="fwVentas.aspx">Ventas</a></li>
+                <li><a href="fwProveedores.aspx">Proveedores</a></li>
+                <li>
+                    <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">Cerrar Sesión</asp:LinkButton>
+                </li>
             </ul>
+            <asp:Label ID="Label1" runat="server" Text="Hola "></asp:Label>
+            <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
         </nav>
         <div class="search-bar">
             <input type="text" placeholder="Buscar productos">

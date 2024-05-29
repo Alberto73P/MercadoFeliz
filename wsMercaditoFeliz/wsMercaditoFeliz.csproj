@@ -44,6 +44,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -67,9 +69,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Connected Services\wsrvTienditaFeliz\svcConexiones.disco" />
+    <None Include="Connected Services\wsrvTienditaFeliz\configuration91.svcinfo" />
+    <None Include="Connected Services\wsrvTienditaFeliz\configuration.svcinfo" />
+    <None Include="Connected Services\wsrvTienditaFeliz\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="css\styles.css" />
     <Content Include="css\stylesLogin.css" />
-    <Content Include="fwProcuctos.aspx" />
+    <Content Include="fwProductos.aspx" />
     <Content Include="fwProveedores.aspx" />
     <Content Include="fwVentas.aspx" />
     <Content Include="img\fondo.jpg" />
@@ -80,12 +89,17 @@
     <Content Include="wpAcceso.aspx" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="fwProcuctos.aspx.cs">
-      <DependentUpon>fwProcuctos.aspx</DependentUpon>
+    <Compile Include="Connected Services\wsrvTienditaFeliz\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="fwProductos.aspx.cs">
+      <DependentUpon>fwProductos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="fwProcuctos.aspx.designer.cs">
-      <DependentUpon>fwProcuctos.aspx</DependentUpon>
+    <Compile Include="fwProductos.aspx.designer.cs">
+      <DependentUpon>fwProductos.aspx</DependentUpon>
     </Compile>
     <Compile Include="fwProveedores.aspx.cs">
       <DependentUpon>fwProveedores.aspx</DependentUpon>
@@ -118,15 +132,23 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Connected Services\wsrvTienditaFeliz\svcConexiones.wsdl" />
     <None Include="packages.config" />
     <Content Include="principal.Master" />
     <Content Include="prepros-6.config" />
+    <Content Include="Properties\DataSources\System.Data.DataSet.datasource" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\wsrvTienditaFeliz\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

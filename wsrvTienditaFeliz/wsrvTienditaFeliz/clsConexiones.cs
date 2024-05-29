@@ -13,7 +13,7 @@ namespace wsrvTienditaFeliz
     public class clsConexiones
     {
         private string cadConn = ConfigurationManager.
-                                     ConnectionStrings["bdMercadoFeliz"].
+                                     ConnectionStrings["bdmercadofeliz"].
                                      ConnectionString.ToString();
 
         public DataSet sp_InsCliente(string RFC,
@@ -230,14 +230,14 @@ namespace wsrvTienditaFeliz
         public DataSet sp_Acceso(string usuario,string password)
         {
             // Clases de conexión y ejecución de comandos
-            string cadSql = "CALL sp_Acceso('" + usuario + "', '" + password  + "')";
+            string cadSql = "CALL sp_ControlAcceso('" + usuario + "', '" + password  + "')";
 
 
             MySqlConnection cnn = new MySqlConnection(cadConn);
             MySqlDataAdapter da = new MySqlDataAdapter(cadSql, cnn);
             // Ejecución del adaptador y recibir datos
             DataSet ds = new DataSet();
-            da.Fill(ds, "sp_Acceso");
+            da.Fill(ds, "sp_ControlAcceso");
             // Retorno de resultados
             return ds;
         }

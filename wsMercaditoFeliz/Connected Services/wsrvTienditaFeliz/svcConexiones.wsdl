@@ -1,0 +1,673 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="sp_InsCliente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RFC" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="apPat" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="apMat" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tel" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sp_InsClienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sp_InsClienteResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sp_DelCliente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RFC" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sp_DelClienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sp_DelClienteResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sp_UpdCliente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RFC" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="apPat" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="apMat" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tel" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sp_UpdClienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sp_UpdClienteResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sp_InsEmpleado">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RFC" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="apPat" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="apMat" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tel" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sp_InsEmpleadoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sp_InsEmpleadoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sp_DelEmpleado">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RFC" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sp_DelEmpleadoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sp_DelEmpleadoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sp_UpdEmpleado">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RFC" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="apPat" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="apMat" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tel" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sp_UpdEmpleadoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sp_UpdEmpleadoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sp_InsProducto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="existencia" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PrecioCompra" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PrecioVenta" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tipo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sp_InsProductoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sp_InsProductoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sp_DelProducto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sp_DelProductoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sp_DelProductoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sp_UpdProducto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="existencia" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PrecioCompra" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PrecioVenta" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tipo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sp_UpdProductoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sp_UpdProductoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vw_Productos">
+        <s:complexType />
+      </s:element>
+      <s:element name="vw_ProductosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vw_ProductosResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vw_Empleado">
+        <s:complexType />
+      </s:element>
+      <s:element name="vw_EmpleadoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vw_EmpleadoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vw_detalle_venta">
+        <s:complexType />
+      </s:element>
+      <s:element name="vw_detalle_ventaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vw_detalle_ventaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sp_Acceso">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sp_AccesoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sp_AccesoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="sp_InsClienteSoapIn">
+    <wsdl:part name="parameters" element="tns:sp_InsCliente" />
+  </wsdl:message>
+  <wsdl:message name="sp_InsClienteSoapOut">
+    <wsdl:part name="parameters" element="tns:sp_InsClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="sp_DelClienteSoapIn">
+    <wsdl:part name="parameters" element="tns:sp_DelCliente" />
+  </wsdl:message>
+  <wsdl:message name="sp_DelClienteSoapOut">
+    <wsdl:part name="parameters" element="tns:sp_DelClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="sp_UpdClienteSoapIn">
+    <wsdl:part name="parameters" element="tns:sp_UpdCliente" />
+  </wsdl:message>
+  <wsdl:message name="sp_UpdClienteSoapOut">
+    <wsdl:part name="parameters" element="tns:sp_UpdClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="sp_InsEmpleadoSoapIn">
+    <wsdl:part name="parameters" element="tns:sp_InsEmpleado" />
+  </wsdl:message>
+  <wsdl:message name="sp_InsEmpleadoSoapOut">
+    <wsdl:part name="parameters" element="tns:sp_InsEmpleadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="sp_DelEmpleadoSoapIn">
+    <wsdl:part name="parameters" element="tns:sp_DelEmpleado" />
+  </wsdl:message>
+  <wsdl:message name="sp_DelEmpleadoSoapOut">
+    <wsdl:part name="parameters" element="tns:sp_DelEmpleadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="sp_UpdEmpleadoSoapIn">
+    <wsdl:part name="parameters" element="tns:sp_UpdEmpleado" />
+  </wsdl:message>
+  <wsdl:message name="sp_UpdEmpleadoSoapOut">
+    <wsdl:part name="parameters" element="tns:sp_UpdEmpleadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="sp_InsProductoSoapIn">
+    <wsdl:part name="parameters" element="tns:sp_InsProducto" />
+  </wsdl:message>
+  <wsdl:message name="sp_InsProductoSoapOut">
+    <wsdl:part name="parameters" element="tns:sp_InsProductoResponse" />
+  </wsdl:message>
+  <wsdl:message name="sp_DelProductoSoapIn">
+    <wsdl:part name="parameters" element="tns:sp_DelProducto" />
+  </wsdl:message>
+  <wsdl:message name="sp_DelProductoSoapOut">
+    <wsdl:part name="parameters" element="tns:sp_DelProductoResponse" />
+  </wsdl:message>
+  <wsdl:message name="sp_UpdProductoSoapIn">
+    <wsdl:part name="parameters" element="tns:sp_UpdProducto" />
+  </wsdl:message>
+  <wsdl:message name="sp_UpdProductoSoapOut">
+    <wsdl:part name="parameters" element="tns:sp_UpdProductoResponse" />
+  </wsdl:message>
+  <wsdl:message name="vw_ProductosSoapIn">
+    <wsdl:part name="parameters" element="tns:vw_Productos" />
+  </wsdl:message>
+  <wsdl:message name="vw_ProductosSoapOut">
+    <wsdl:part name="parameters" element="tns:vw_ProductosResponse" />
+  </wsdl:message>
+  <wsdl:message name="vw_EmpleadoSoapIn">
+    <wsdl:part name="parameters" element="tns:vw_Empleado" />
+  </wsdl:message>
+  <wsdl:message name="vw_EmpleadoSoapOut">
+    <wsdl:part name="parameters" element="tns:vw_EmpleadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="vw_detalle_ventaSoapIn">
+    <wsdl:part name="parameters" element="tns:vw_detalle_venta" />
+  </wsdl:message>
+  <wsdl:message name="vw_detalle_ventaSoapOut">
+    <wsdl:part name="parameters" element="tns:vw_detalle_ventaResponse" />
+  </wsdl:message>
+  <wsdl:message name="sp_AccesoSoapIn">
+    <wsdl:part name="parameters" element="tns:sp_Acceso" />
+  </wsdl:message>
+  <wsdl:message name="sp_AccesoSoapOut">
+    <wsdl:part name="parameters" element="tns:sp_AccesoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="svcConexionesSoap">
+    <wsdl:operation name="sp_InsCliente">
+      <wsdl:input message="tns:sp_InsClienteSoapIn" />
+      <wsdl:output message="tns:sp_InsClienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sp_DelCliente">
+      <wsdl:input message="tns:sp_DelClienteSoapIn" />
+      <wsdl:output message="tns:sp_DelClienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sp_UpdCliente">
+      <wsdl:input message="tns:sp_UpdClienteSoapIn" />
+      <wsdl:output message="tns:sp_UpdClienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sp_InsEmpleado">
+      <wsdl:input message="tns:sp_InsEmpleadoSoapIn" />
+      <wsdl:output message="tns:sp_InsEmpleadoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sp_DelEmpleado">
+      <wsdl:input message="tns:sp_DelEmpleadoSoapIn" />
+      <wsdl:output message="tns:sp_DelEmpleadoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sp_UpdEmpleado">
+      <wsdl:input message="tns:sp_UpdEmpleadoSoapIn" />
+      <wsdl:output message="tns:sp_UpdEmpleadoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sp_InsProducto">
+      <wsdl:input message="tns:sp_InsProductoSoapIn" />
+      <wsdl:output message="tns:sp_InsProductoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sp_DelProducto">
+      <wsdl:input message="tns:sp_DelProductoSoapIn" />
+      <wsdl:output message="tns:sp_DelProductoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sp_UpdProducto">
+      <wsdl:input message="tns:sp_UpdProductoSoapIn" />
+      <wsdl:output message="tns:sp_UpdProductoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vw_Productos">
+      <wsdl:input message="tns:vw_ProductosSoapIn" />
+      <wsdl:output message="tns:vw_ProductosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vw_Empleado">
+      <wsdl:input message="tns:vw_EmpleadoSoapIn" />
+      <wsdl:output message="tns:vw_EmpleadoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vw_detalle_venta">
+      <wsdl:input message="tns:vw_detalle_ventaSoapIn" />
+      <wsdl:output message="tns:vw_detalle_ventaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sp_Acceso">
+      <wsdl:input message="tns:sp_AccesoSoapIn" />
+      <wsdl:output message="tns:sp_AccesoSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="svcConexionesSoap" type="tns:svcConexionesSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="sp_InsCliente">
+      <soap:operation soapAction="http://tempuri.org/sp_InsCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sp_DelCliente">
+      <soap:operation soapAction="http://tempuri.org/sp_DelCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sp_UpdCliente">
+      <soap:operation soapAction="http://tempuri.org/sp_UpdCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sp_InsEmpleado">
+      <soap:operation soapAction="http://tempuri.org/sp_InsEmpleado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sp_DelEmpleado">
+      <soap:operation soapAction="http://tempuri.org/sp_DelEmpleado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sp_UpdEmpleado">
+      <soap:operation soapAction="http://tempuri.org/sp_UpdEmpleado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sp_InsProducto">
+      <soap:operation soapAction="http://tempuri.org/sp_InsProducto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sp_DelProducto">
+      <soap:operation soapAction="http://tempuri.org/sp_DelProducto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sp_UpdProducto">
+      <soap:operation soapAction="http://tempuri.org/sp_UpdProducto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vw_Productos">
+      <soap:operation soapAction="http://tempuri.org/vw_Productos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vw_Empleado">
+      <soap:operation soapAction="http://tempuri.org/vw_Empleado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vw_detalle_venta">
+      <soap:operation soapAction="http://tempuri.org/vw_detalle_venta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sp_Acceso">
+      <soap:operation soapAction="http://tempuri.org/sp_Acceso" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="svcConexionesSoap12" type="tns:svcConexionesSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="sp_InsCliente">
+      <soap12:operation soapAction="http://tempuri.org/sp_InsCliente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sp_DelCliente">
+      <soap12:operation soapAction="http://tempuri.org/sp_DelCliente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sp_UpdCliente">
+      <soap12:operation soapAction="http://tempuri.org/sp_UpdCliente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sp_InsEmpleado">
+      <soap12:operation soapAction="http://tempuri.org/sp_InsEmpleado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sp_DelEmpleado">
+      <soap12:operation soapAction="http://tempuri.org/sp_DelEmpleado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sp_UpdEmpleado">
+      <soap12:operation soapAction="http://tempuri.org/sp_UpdEmpleado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sp_InsProducto">
+      <soap12:operation soapAction="http://tempuri.org/sp_InsProducto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sp_DelProducto">
+      <soap12:operation soapAction="http://tempuri.org/sp_DelProducto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sp_UpdProducto">
+      <soap12:operation soapAction="http://tempuri.org/sp_UpdProducto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vw_Productos">
+      <soap12:operation soapAction="http://tempuri.org/vw_Productos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vw_Empleado">
+      <soap12:operation soapAction="http://tempuri.org/vw_Empleado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vw_detalle_venta">
+      <soap12:operation soapAction="http://tempuri.org/vw_detalle_venta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sp_Acceso">
+      <soap12:operation soapAction="http://tempuri.org/sp_Acceso" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="svcConexiones">
+    <wsdl:port name="svcConexionesSoap" binding="tns:svcConexionesSoap">
+      <soap:address location="https://localhost:44341/svcConexiones.asmx" />
+    </wsdl:port>
+    <wsdl:port name="svcConexionesSoap12" binding="tns:svcConexionesSoap12">
+      <soap12:address location="https://localhost:44341/svcConexiones.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
