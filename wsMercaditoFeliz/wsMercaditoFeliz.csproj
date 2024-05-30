@@ -76,6 +76,8 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <Content Include="css\Clientes.css" />
+    <Content Include="css\Empleados.css" />
     <Content Include="css\styles.css" />
     <Content Include="css\stylesLogin.css" />
     <Content Include="fwClientes.aspx" />

@@ -109,6 +109,7 @@ namespace wsMercaditoFeliz
             celdaTotal.Text = total.ToString("F2");
             fila.Cells.Add(celdaTotal);
             tblVenta.Rows.Add(fila);
+            
         }
         protected void txtCantidad_TextChanged(object sender, EventArgs e)
         {
@@ -139,6 +140,11 @@ namespace wsMercaditoFeliz
         {
            
             return true;
+        }
+
+        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 

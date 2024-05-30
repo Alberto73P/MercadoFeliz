@@ -1,0 +1,41 @@
+﻿.custom-textboxNombre {
+    margin-left: 59px;
+}
+
+.custom-textboxRFC {
+    margin-left: 84px;
+}
+
+.custom-textboxTel {
+    margin-left: 60px;
+}
+.custom-textboxUsuario {
+    margin-left: 64px;
+}
+.custom-textboxcontrasena {
+    margin-left: 34px;
+}
+
+.contenedor {
+}
+
+.divAgregar {
+    width: 27%;
+    float: left;
+}
+
+.divEliminar {
+    width: 27%;
+    float: left;
+    margin-left: 6%;
+}
+
+.divActualizar {
+    width: 27%;
+    float: left;
+    margin-left: 6%;
+}
+
+.custom-btnActualizar {
+    border-radius: 40px;
+}
