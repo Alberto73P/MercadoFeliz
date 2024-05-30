@@ -83,7 +83,6 @@ namespace wsrvTienditaFeliz
             return objeto.sp_InsProducto(nombre, existencia, PrecioCompra, PrecioVenta, tipo);
         }
 
-
         [WebMethod]
         public DataSet sp_DelProducto(string ID)
         {
@@ -91,7 +90,6 @@ namespace wsrvTienditaFeliz
             clsConexiones objeto = new clsConexiones();
             return objeto.sp_DelProducto(ID);
         }
-
 
         [WebMethod]
         public DataSet sp_UpdProducto(string nombre,
@@ -104,7 +102,6 @@ namespace wsrvTienditaFeliz
             clsConexiones objeto = new clsConexiones();
             return objeto.sp_UpdProducto(nombre, existencia, PrecioCompra, PrecioVenta, tipo);
         }
-
 
         [WebMethod]
         public DataSet vw_Productos()
