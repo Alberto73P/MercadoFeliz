@@ -24,7 +24,7 @@
             </asp:Table>
         </div>
         <div>
-            <asp:Button ID="btnGuardar" Text="Guardar" runat="server" OnClick="btnGuardar_Click" />
+            <asp:Button ID="btnGuardar" Text="Vender" runat="server" OnClick="btnGuardar_Click" />
         </div>
     </div>
     

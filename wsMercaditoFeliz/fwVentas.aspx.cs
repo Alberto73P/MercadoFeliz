@@ -75,7 +75,6 @@ namespace wsMercaditoFeliz
                 }
                 catch (Exception ex)
                 {
-                    // Maneja cualquier excepción que ocurra durante la inserción
                     Response.Write("<script>alert('Ocurrió un error al registrar la venta: " + ex.Message + "');</script>");
                 }
                 finally
