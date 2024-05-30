@@ -11,6 +11,7 @@ namespace wsMercaditoFeliz
 {
     public partial class fwVentas : System.Web.UI.Page
     {
+        int i = 0;
         private List<Producto> Productos
         {
             get
@@ -27,8 +28,8 @@ namespace wsMercaditoFeliz
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
-            {
+            if (IsPostBack)
+            {                
                 InicializarTabla();
             }
         }
@@ -60,11 +61,17 @@ namespace wsMercaditoFeliz
                 {
                     svcConexionesSoapClient objServ = new svcConexionesSoapClient();
                     DataSet ds = objServ.sp_InsVenta(Session["usuario"].ToString());
-                    foreach (Producto producto in Productos)
-                    {                       
-                        DataSet ds2 = objServ.sp_InsDetalleVenta(producto.Nombre, producto.Cantidad);
-                    }
                     Response.Write("<script>alert('Venta registrada');</script>");
+
+                    foreach (TableRow row in tblVenta.Rows.Cast<TableRow>().Skip(1))
+                    {
+                        TextBox txtCantidad = (TextBox)row.Cells[0].FindControl("txtCantidad");
+                        int cantidad = int.Parse(txtCantidad.Text);
+                        string nombreProducto = row.Cells[1].Text;
+
+                        // Llama al procedimiento almacenado para insertar el detalle de la venta
+                        DataSet ds2 = objServ.sp_InsDetalleVenta( nombreProducto, cantidad);
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -92,9 +99,10 @@ namespace wsMercaditoFeliz
 
         private void AgregarFilaATabla(Producto producto)
         {
+            i++;
             TableRow fila = new TableRow();
             TableCell celdaCantidad = new TableCell();
-            TextBox txtCantidad = new TextBox { ID = "txtCantidad", Text = producto.Cantidad.ToString()};
+            TextBox txtCantidad = new TextBox { ID = "txtCantidad"+i, Text = producto.Cantidad.ToString()};
             celdaCantidad.Controls.Add(txtCantidad);
             fila.Cells.Add(celdaCantidad);
 
@@ -111,17 +119,9 @@ namespace wsMercaditoFeliz
             fila.Cells.Add(celdaTotal);
             tblVenta.Rows.Add(fila);
         }
-        protected void txtCantidad_TextChanged(object sender, EventArgs e)
+        protected void txtCantidad_KeyPress(object sender, EventArgs e)
         {
-            TextBox txtCantidad = (TextBox)sender;
-            TableRow fila = (TableRow)txtCantidad.NamingContainer;
-            int rowIndex = tblVenta.Rows.GetRowIndex(fila);
-            if (rowIndex > 0) // Ignorar la fila de encabezado
-            {
-                Producto producto = Productos[rowIndex - 1];
-                producto.Cantidad = decimal.Parse(txtCantidad.Text);
-                CalcularTotal(fila, producto.Precio);
-            }
+            Response.Write("<script>alert('Venta registrada');</script>");
         }
 
         private void CalcularTotal(TableRow fila, decimal precio)

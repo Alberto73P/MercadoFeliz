@@ -18,8 +18,7 @@ namespace wsMercaditoFeliz
         }
 
         protected void Button1_Click(object sender, EventArgs e)
-        {
-            // Creacion del objeto del servicio Web
+        {          
             svcConexionesSoapClient objServ = new svcConexionesSoapClient();
             DataSet ds = new DataSet();
             ds = objServ.sp_Acceso(TextBox1.Text, TextBox2.Text);
