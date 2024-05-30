@@ -19,6 +19,8 @@
                 <li><a href="fwProductos.aspx">Productos</a></li>
                 <li><a href="fwVentas.aspx">Ventas</a></li>
                 <li><a href="fwProveedores.aspx">Proveedores</a></li>
+                <li><a href="fwClientes.aspx">Clientes</a></li>
+                <li><a href="fwEmpleados.aspx">Empleados</a></li>
                 <li>
                     <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">Cerrar Sesión</asp:LinkButton>
                 </li>

@@ -81,6 +81,8 @@
             <s:element minOccurs="0" maxOccurs="1" name="apPat" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="apMat" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="tel" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="contrasena" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -127,6 +129,8 @@
             <s:element minOccurs="0" maxOccurs="1" name="apPat" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="apMat" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="tel" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="contrasena" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>

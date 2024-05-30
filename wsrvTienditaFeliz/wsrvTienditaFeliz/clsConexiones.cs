@@ -76,10 +76,12 @@ namespace wsrvTienditaFeliz
                                     string nombre,
                                     string apPat,
                                     string apMat,
-                                    string tel)
+                                    string tel,
+                                    string usuario,
+                                    string contrasena)
         {
             // Clases de conexión y ejecución de comandos
-            string cadSql = "CALL sp_InsEmpleado('" + RFC + "', '" + nombre + "', '" + apPat + "', '" + apMat + "', '" + tel + "')";
+            string cadSql = "CALL sp_InsEmpleado('" + RFC + "', '" + nombre + "', '" + apPat + "', '" + apMat + "', '" + tel + "','" + usuario + "','" + contrasena + "')";
 
 
             MySqlConnection cnn = new MySqlConnection(cadConn);
@@ -113,10 +115,12 @@ namespace wsrvTienditaFeliz
                                      string nombre,
                                      string apPat,
                                      string apMat,
-                                     string tel)
+                                     string tel,
+                                     string usuario,
+                                     string contrasena)
         {
             // Clases de conexión y ejecución de comandos
-            string cadSql = "CALL sp_UpdEmpleado('" + RFC + "', '" + nombre + "', '" + apPat + "', '" + apMat + "', '" + tel + "')";
+            string cadSql = "CALL sp_UpdEmpleado('" + RFC + "', '" + nombre + "', '" + apPat + "', '" + apMat + "', '" + tel + "', '" + usuario + "', '" + contrasena + "')";
 
 
             MySqlConnection cnn = new MySqlConnection(cadConn);

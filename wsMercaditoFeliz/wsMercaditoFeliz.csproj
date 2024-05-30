@@ -78,6 +78,8 @@
     </None>
     <Content Include="css\styles.css" />
     <Content Include="css\stylesLogin.css" />
+    <Content Include="fwClientes.aspx" />
+    <Content Include="fwEmpleados.aspx" />
     <Content Include="fwProductos.aspx" />
     <Content Include="fwProveedores.aspx" />
     <Content Include="fwVentas.aspx" />
@@ -93,6 +95,20 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="fwClientes.aspx.cs">
+      <DependentUpon>fwClientes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="fwClientes.aspx.designer.cs">
+      <DependentUpon>fwClientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="fwEmpleados.aspx.cs">
+      <DependentUpon>fwEmpleados.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="fwEmpleados.aspx.designer.cs">
+      <DependentUpon>fwEmpleados.aspx</DependentUpon>
     </Compile>
     <Compile Include="fwProductos.aspx.cs">
       <DependentUpon>fwProductos.aspx</DependentUpon>

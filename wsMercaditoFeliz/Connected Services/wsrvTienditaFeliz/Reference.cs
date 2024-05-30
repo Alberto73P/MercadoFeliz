@@ -39,10 +39,10 @@ namespace wsMercaditoFeliz.wsrvTienditaFeliz {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/sp_InsEmpleado", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Data.DataSet sp_InsEmpleado(string RFC, string nombre, string apPat, string apMat, string tel);
+        System.Data.DataSet sp_InsEmpleado(string RFC, string nombre, string apPat, string apMat, string tel, string usuario, string contrasena);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/sp_InsEmpleado", ReplyAction="*")]
-        System.Threading.Tasks.Task<System.Data.DataSet> sp_InsEmpleadoAsync(string RFC, string nombre, string apPat, string apMat, string tel);
+        System.Threading.Tasks.Task<System.Data.DataSet> sp_InsEmpleadoAsync(string RFC, string nombre, string apPat, string apMat, string tel, string usuario, string contrasena);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/sp_DelEmpleado", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -53,10 +53,10 @@ namespace wsMercaditoFeliz.wsrvTienditaFeliz {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/sp_UpdEmpleado", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Data.DataSet sp_UpdEmpleado(string RFC, string nombre, string apPat, string apMat, string tel);
+        System.Data.DataSet sp_UpdEmpleado(string RFC, string nombre, string apPat, string apMat, string tel, string usuario, string contrasena);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/sp_UpdEmpleado", ReplyAction="*")]
-        System.Threading.Tasks.Task<System.Data.DataSet> sp_UpdEmpleadoAsync(string RFC, string nombre, string apPat, string apMat, string tel);
+        System.Threading.Tasks.Task<System.Data.DataSet> sp_UpdEmpleadoAsync(string RFC, string nombre, string apPat, string apMat, string tel, string usuario, string contrasena);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/sp_InsProducto", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -180,12 +180,12 @@ namespace wsMercaditoFeliz.wsrvTienditaFeliz {
             return base.Channel.sp_UpdClienteAsync(RFC, nombre, apPat, apMat, tel);
         }
         
-        public System.Data.DataSet sp_InsEmpleado(string RFC, string nombre, string apPat, string apMat, string tel) {
-            return base.Channel.sp_InsEmpleado(RFC, nombre, apPat, apMat, tel);
+        public System.Data.DataSet sp_InsEmpleado(string RFC, string nombre, string apPat, string apMat, string tel, string usuario, string contrasena) {
+            return base.Channel.sp_InsEmpleado(RFC, nombre, apPat, apMat, tel, usuario, contrasena);
         }
         
-        public System.Threading.Tasks.Task<System.Data.DataSet> sp_InsEmpleadoAsync(string RFC, string nombre, string apPat, string apMat, string tel) {
-            return base.Channel.sp_InsEmpleadoAsync(RFC, nombre, apPat, apMat, tel);
+        public System.Threading.Tasks.Task<System.Data.DataSet> sp_InsEmpleadoAsync(string RFC, string nombre, string apPat, string apMat, string tel, string usuario, string contrasena) {
+            return base.Channel.sp_InsEmpleadoAsync(RFC, nombre, apPat, apMat, tel, usuario, contrasena);
         }
         
         public System.Data.DataSet sp_DelEmpleado(string RFC) {
@@ -196,12 +196,12 @@ namespace wsMercaditoFeliz.wsrvTienditaFeliz {
             return base.Channel.sp_DelEmpleadoAsync(RFC);
         }
         
-        public System.Data.DataSet sp_UpdEmpleado(string RFC, string nombre, string apPat, string apMat, string tel) {
-            return base.Channel.sp_UpdEmpleado(RFC, nombre, apPat, apMat, tel);
+        public System.Data.DataSet sp_UpdEmpleado(string RFC, string nombre, string apPat, string apMat, string tel, string usuario, string contrasena) {
+            return base.Channel.sp_UpdEmpleado(RFC, nombre, apPat, apMat, tel, usuario, contrasena);
         }
         
-        public System.Threading.Tasks.Task<System.Data.DataSet> sp_UpdEmpleadoAsync(string RFC, string nombre, string apPat, string apMat, string tel) {
-            return base.Channel.sp_UpdEmpleadoAsync(RFC, nombre, apPat, apMat, tel);
+        public System.Threading.Tasks.Task<System.Data.DataSet> sp_UpdEmpleadoAsync(string RFC, string nombre, string apPat, string apMat, string tel, string usuario, string contrasena) {
+            return base.Channel.sp_UpdEmpleadoAsync(RFC, nombre, apPat, apMat, tel, usuario, contrasena);
         }
         
         public System.Data.DataSet sp_InsProducto(string nombre, string existencia, string PrecioCompra, string PrecioVenta, string tipo) {

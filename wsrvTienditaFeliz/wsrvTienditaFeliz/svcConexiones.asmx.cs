@@ -50,11 +50,11 @@ namespace wsrvTienditaFeliz
         }
 
         [WebMethod]
-        public DataSet sp_InsEmpleado(string RFC, string nombre, string apPat, string apMat, string tel)
+        public DataSet sp_InsEmpleado(string RFC, string nombre, string apPat, string apMat, string tel,string usuario, string contrasena)
         {
 
             clsConexiones objeto = new clsConexiones();
-            return objeto.sp_InsEmpleado(RFC, nombre, apPat, apMat, tel);
+            return objeto.sp_InsEmpleado(RFC, nombre, apPat, apMat, tel,usuario,contrasena);
         }
 
         [WebMethod]
@@ -67,11 +67,11 @@ namespace wsrvTienditaFeliz
 
 
         [WebMethod]
-        public DataSet sp_UpdEmpleado(string RFC, string nombre, string apPat, string apMat, string tel)
+        public DataSet sp_UpdEmpleado(string RFC, string nombre, string apPat, string apMat, string tel,string usuario, string contrasena)
         {
 
             clsConexiones objeto = new clsConexiones();
-            return objeto.sp_UpdEmpleado(RFC, nombre, apPat, apMat, tel);
+            return objeto.sp_UpdEmpleado(RFC, nombre, apPat, apMat, tel,usuario,contrasena);
         }
 
 
