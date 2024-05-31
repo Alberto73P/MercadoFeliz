@@ -17,31 +17,50 @@ namespace wsMercaditoFeliz
         protected void Page_Load(object sender, EventArgs e)
         {
 
+            GridView2.PageIndexChanging += GridView2_PageIndexChanging;
+            GridView2.DataSource = objCrud.vw_Clientes();
+            GridView2.DataMember = "vw_Clientes";
+            GridView2.DataBind();
+
         }
 
+        private void GridView2_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            GridView2.PageIndex = e.NewPageIndex;
+            GridView2.DataBind();
+        }
+
+        private void GridView1_PageIndexChanging1(object sender, GridViewPageEventArgs e)
+        {
+            
+        }
+
+  
         protected void btnAgregar_Click(object sender, EventArgs e)
         {
-            if (txtNombre.Text == "")
+            if (txtRFC.Text == "")
             {
+                
                 Response.Write("<script language='javascript'>" +
-                               "alert('No se ingreso el nombre');" +
-                               "</script>");
+                                        "alert('No se ingreso el RFC ');" +
+                                        "</script>");
             }
             else
             {
-                if (txtApellidoP.Text == "")
+                if (txtNombre.Text == "")
                 {
+                    
                     Response.Write("<script language='javascript'>" +
-                                    "alert('No se ingreso el apellido paterno ');" +
-                                    "</script>");
+                               "alert('No se ingreso el nombre');" +
+                               "</script>");
                 }
                 else
                 {
-                    if (txtRFC.Text == "")
+                    if (txtApellidoP.Text == "")
                     {
                         Response.Write("<script language='javascript'>" +
-                                        "alert('No se ingreso el RFC ');" +
-                                        "</script>");
+                                    "alert('No se ingreso el apellido paterno ');" +
+                                    "</script>");
                     }
                     else
                     {
@@ -117,7 +136,7 @@ namespace wsMercaditoFeliz
 
         protected void btnActualizar_Click(object sender, EventArgs e)
         {
-            if (txtRFCUpd.Text == "")
+            if (txtRFC.Text == "")
             {
                 Response.Write("<script language='javascript'>" +
                                         "alert('Es necesario ingresar el RFC ');" +
@@ -125,7 +144,7 @@ namespace wsMercaditoFeliz
             }
             else
             {
-                if (txtNombreUpd.Text == "")
+                if (txtNombre.Text == "")
                 {
                     Response.Write("<script language='javascript'>" +
                                "alert('No se ingreso el nombre');" +
@@ -133,7 +152,7 @@ namespace wsMercaditoFeliz
                 }
                 else
                 {
-                    if (txtApellidoPUpd.Text == "")
+                    if (txtApellidoP.Text == "")
                     {
                         Response.Write("<script language='javascript'>" +
                                    "alert('No se ingreso el apellido paterno ');" +
@@ -141,7 +160,7 @@ namespace wsMercaditoFeliz
                     }
                     else
                     {
-                        if (txtTelefonoUpd.Text == "")
+                        if (txtTelefono.Text == "")
                         {
                             Response.Write("<script language='javascript'>" +
                                         "alert('No se ingreso el numero Telefonico');" +
@@ -150,7 +169,7 @@ namespace wsMercaditoFeliz
                         else
                         {
                             DataSet ds = new DataSet();
-                            ds = objCrud.sp_UpdCliente(txtRFCUpd.Text, txtNombreUpd.Text, txtApellidoPUpd.Text, txtApellidoMUpd.Text, txtTelefonoUpd.Text);
+                            ds = objCrud.sp_UpdCliente(txtRFC.Text, txtNombre.Text, txtApellidoP.Text, txtApellidoM.Text, txtTelefono.Text);
                             Response.Write("Estado InsCliente --> " + ds.Tables[0].Rows[0][0].ToString());
 
                             // Envio de mensajes de salida al usuario

@@ -127,6 +127,13 @@ namespace wsMercaditoFeliz.wsrvTienditaFeliz {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/sp_InsDetalleVenta", ReplyAction="*")]
         System.Threading.Tasks.Task<System.Data.DataSet> sp_InsDetalleVentaAsync(string nombre, decimal cantidad);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/vw_Clientes", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet vw_Clientes();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/vw_Clientes", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Data.DataSet> vw_ClientesAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -282,6 +289,14 @@ namespace wsMercaditoFeliz.wsrvTienditaFeliz {
         
         public System.Threading.Tasks.Task<System.Data.DataSet> sp_InsDetalleVentaAsync(string nombre, decimal cantidad) {
             return base.Channel.sp_InsDetalleVentaAsync(nombre, cantidad);
+        }
+        
+        public System.Data.DataSet vw_Clientes() {
+            return base.Channel.vw_Clientes();
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataSet> vw_ClientesAsync() {
+            return base.Channel.vw_ClientesAsync();
         }
     }
 }

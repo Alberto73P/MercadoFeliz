@@ -356,6 +356,23 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="vw_Clientes">
+        <s:complexType />
+      </s:element>
+      <s:element name="vw_ClientesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vw_ClientesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="sp_InsClienteSoapIn">
@@ -454,6 +471,12 @@
   <wsdl:message name="sp_InsDetalleVentaSoapOut">
     <wsdl:part name="parameters" element="tns:sp_InsDetalleVentaResponse" />
   </wsdl:message>
+  <wsdl:message name="vw_ClientesSoapIn">
+    <wsdl:part name="parameters" element="tns:vw_Clientes" />
+  </wsdl:message>
+  <wsdl:message name="vw_ClientesSoapOut">
+    <wsdl:part name="parameters" element="tns:vw_ClientesResponse" />
+  </wsdl:message>
   <wsdl:portType name="svcConexionesSoap">
     <wsdl:operation name="sp_InsCliente">
       <wsdl:input message="tns:sp_InsClienteSoapIn" />
@@ -518,6 +541,10 @@
     <wsdl:operation name="sp_InsDetalleVenta">
       <wsdl:input message="tns:sp_InsDetalleVentaSoapIn" />
       <wsdl:output message="tns:sp_InsDetalleVentaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vw_Clientes">
+      <wsdl:input message="tns:vw_ClientesSoapIn" />
+      <wsdl:output message="tns:vw_ClientesSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="svcConexionesSoap" type="tns:svcConexionesSoap">
@@ -666,6 +693,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="vw_Clientes">
+      <soap:operation soapAction="http://tempuri.org/vw_Clientes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="svcConexionesSoap12" type="tns:svcConexionesSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -806,6 +842,15 @@
     </wsdl:operation>
     <wsdl:operation name="sp_InsDetalleVenta">
       <soap12:operation soapAction="http://tempuri.org/sp_InsDetalleVenta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vw_Clientes">
+      <soap12:operation soapAction="http://tempuri.org/vw_Clientes" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

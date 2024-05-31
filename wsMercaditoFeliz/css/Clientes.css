@@ -17,12 +17,12 @@
 .divEliminar {
     width: 27%;
     float: left;
-    margin-left: 6%;
+
 }
 .divActualizar {
     width: 27%;
     float: left;
-    margin-left: 6%;
+
 }
 .btn {
     background-color: #4CAF50; /* Color de fondo */
@@ -42,7 +42,7 @@
 }
 
 .btnEliminar {
-    background-color: #4CAF50; /* Color de fondo */
+    background-color: #F53333; /* Color de fondo */
     border: none; /* Sin bordes */
     color: white; /* Color del texto */
     padding: 6px 8px; /* Espaciado interno */
@@ -55,7 +55,25 @@
     border-radius: 4px; /* Bordes redondeados */
 }
 
-    .btn:hover {
-        background-color: #45a049; /* Color de fondo al pasar el ratón */
+    .btnEliminar:hover {
+        background-color: #EF2121; /* Color de fondo al pasar el ratón */
     }
+
+.btnActualizar {
+    background-color: #0a97df; /* Color de fondo */
+    border: none; /* Sin bordes */
+    color: white; /* Color del texto */
+    padding: 6px 8px; /* Espaciado interno */
+    text-align: center; /* Alineación del texto */
+    text-decoration: none; /* Sin subrayado */
+    display: inline-block; /* Mostrar en línea */
+    font-size: 14px; /* Tamaño de fuente */
+    margin: 10px 2px; /* Margen alrededor del botón */
+    cursor: pointer; /* Cambiar cursor al pasar sobre el botón */
+    border-radius: 4px; /* Bordes redondeados */
+}
+
+.btnEliminar:hover {
+    background-color: #F5DE39; /* Color de fondo al pasar el ratón */
+}
 

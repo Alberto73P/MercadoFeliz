@@ -159,6 +159,13 @@ namespace wsrvTienditaFeliz
             return objeto.sp_InsDetalleVenta(nombre, cantidad);
         }
 
+        [WebMethod]
+        public DataSet vw_Clientes()
+        {
+            clsConexiones objeto = new clsConexiones();
+            return objeto.vw_Clientes();
+        }
+
     }
 
 

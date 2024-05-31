@@ -282,6 +282,18 @@ namespace wsrvTienditaFeliz
             return ds;
         }
 
+        public DataSet vw_Clientes() {
+            // Clases de conexión y ejecución de comandos
+            string cadSql = "select * from cliente;";
+            MySqlConnection cnn = new MySqlConnection(cadConn);
+            MySqlDataAdapter da = new MySqlDataAdapter(cadSql, cnn);
+            // Ejecución del adaptador y recibir datos
+            DataSet ds = new DataSet();
+            da.Fill(ds, "vw_Clientes");
+            // Retorno de resultados
+            return ds;
+        }
+
 
 
 

@@ -5,7 +5,11 @@
      <link rel="stylesheet" type="text/css" href="css/Clientes.css" />
     <div class="contenedor">
         <div class="divAgregar">
-            <h2>AGREGAR CLIENTE</h2>
+            <h2>AGREGAR/MODIFICAR CLIENTE</h2>
+            <asp:Label Text="RFC" runat="server" />
+            <asp:TextBox CssClass="custom-textboxRFC" ID="txtRFC" runat="server"></asp:TextBox>
+            <br/>
+            <br/>
             <asp:Label Text="Nombre" runat="server" />
             <asp:TextBox  CssClass="custom-textboxNombre" ID="txtNombre" runat="server" ></asp:TextBox>
             <br/>
@@ -18,13 +22,10 @@
             <asp:TextBox ID="txtApellidoM" runat="server"></asp:TextBox>
             <br/>
             <br/>
-            <asp:Label Text="RFC" runat="server" />
-            <asp:TextBox CssClass="custom-textboxRFC" ID="txtRFC" runat="server"></asp:TextBox>
-            <br/>
-            <br/>
             <asp:Label Text="télefono" runat="server" />
             <asp:TextBox CssClass="custom-textboxTel" ID="txtTelefono" runat="server"></asp:TextBox>
             <asp:Button ID="btnAgregar" runat="server" Text="Agregar" OnClick="btnAgregar_Click" CssClass="btn"/>
+             <asp:Button ID="btnActualizar" runat="server" Text="Actualizar" OnClick="btnActualizar_Click" CssClass="btnActualizar"/>
         </div>
 
     
@@ -37,28 +38,15 @@
 
     
         <div class="divActualizar">
-            <h2>ACTUALIZAR CLIENTE</h2>
-            <asp:Label Text="RFC: " runat="server" />
-            <asp:TextBox CssClass="custom-textboxRFC" ID="txtRFCUpd" runat="server"></asp:TextBox>
-            <br/>
-            <asp:Label Text="Nombre: " runat="server" />
-            <asp:TextBox CssClass="custom-textboxNombre" ID="txtNombreUpd" runat="server"></asp:TextBox>
-            <br/>
-            <asp:Label Text="Apellido Paterno:" runat="server" />
-            <asp:TextBox ID="txtApellidoPUpd" runat="server"></asp:TextBox>
-            <br/>
-            <asp:Label Text="Apellido Materno:" runat="server" />
-            <asp:TextBox ID="txtApellidoMUpd" runat="server"></asp:TextBox>
-            <br/>
-            <asp:Label Text="télefono" runat="server" />
-            <asp:TextBox CssClass="custom-textboxTel" ID="txtTelefonoUpd" runat="server"></asp:TextBox>
-            <asp:Button ID="btnActualizar" runat="server" Text="Actualizar" OnClick="btnActualizar_Click" />
-            
+            <h2>Visualización</h2>
+            <asp:Button ID="Button1" runat="server" Text="Button" />
+            <asp:GridView ID="GridView2" runat="server" AllowPaging="True" PageIndex="2" PageSize="3">
+            </asp:GridView>
         </div>
 
         
     </div>
-
+    
         
     
 </asp:Content>
